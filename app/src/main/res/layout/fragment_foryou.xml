@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/ffy_shimmer_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#EEEEEE"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/context_layout"
+                android:layout_width="200dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/status_layout"
+                app:layout_constraintStart_toStartOf="@+id/like_layout">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/time_layout"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="6dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/comment_layout"
+                app:layout_constraintStart_toEndOf="@+id/like_layout">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/status_layout"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="5dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/like_layout"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="200dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="13dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/profile_layout"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="13dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/profile_layout"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="23dp"
+                android:background="#292929"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/like_layout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/comment_layout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/like_layout"
+                app:layout_constraintStart_toEndOf="@+id/like_layout">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share_layout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/comment_layout">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/more_layout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="#292929"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"></LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/ffy_swiperefresher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ffy_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/custom_frag_post_layout" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/ffy_transition"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ffy_header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="bottom|end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ffy_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="1dp"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="null"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right|top"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ffy_full_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="5dp"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="null"
+                        android:textColor="#ffffff" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ffy_profile"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/img_logo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ffy_container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:id="@+id/ffy_footer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/ffy_sub_footer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ffy_context_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/ffy_context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="null"
+                        android:textColor="#ffffff" />
+                    <!--                    <com.reyson.spotd.Class.Components.Blocks.HighlightedTextView-->
+                    <!--                        android:id="@+id/ffy_context"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:text="Your text with #hashtags and URLs."-->
+                    <!--                        />-->
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ffy_status_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/ffy_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="null"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:id="@+id/ffy_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:shadowColor="#000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="null"
+                        android:textColor="#ffffff" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ffy_like_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/ffy_linear_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ffy_like"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="10dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_heart_solid" />
+
+                        <TextView
+                            android:id="@+id/ffy_like_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:shadowColor="#000000"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="Like"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ffy_comment_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ffy_comment"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:focusable="false"
+                            android:padding="10dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/img_comment" />
+
+                        <TextView
+                            android:id="@+id/ffy_comment_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:shadowColor="#000000"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="Comment"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ffy_shared_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ffy_share"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="10dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_share" />
+
+                        <TextView
+                            android:id="@+id/ffy_share_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:shadowColor="#000000"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="Share"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ffy_helper_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" />
+
+                    <LinearLayout
+                        android:id="@+id/ffy_more_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ffy_more"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="15dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/img_more" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/ffy_transition"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ffy_header_layout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:gravity="bottom|right"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer1"-->
+    <!--                        android:layout_width="150dp"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:layout_marginEnd="10dp"-->
+    <!--                        android:layout_marginBottom="5dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/ffy_username"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginEnd="5dp"-->
+    <!--                        android:layout_marginBottom="2dp"-->
+    <!--                        android:text="null"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        android:visibility="gone" />-->
+
+
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:layout_weight="1"-->
+    <!--                    android:gravity="right|top"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer2"-->
+    <!--                        android:layout_width="100dp"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:layout_marginTop="5dp"-->
+    <!--                        android:layout_marginEnd="10dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/ffy_full_name"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="5dp"-->
+    <!--                        android:layout_marginEnd="5dp"-->
+    <!--                        android:text="null"-->
+    <!--                        android:visibility="gone" />-->
+
+    <!--                </LinearLayout>-->
+
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="80dp"-->
+    <!--                android:layout_height="80dp"-->
+    <!--                android:layout_marginEnd="15dp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/ffy_profile"-->
+    <!--                        android:layout_width="64dp"-->
+    <!--                        android:layout_height="64dp"-->
+    <!--                        android:visibility="gone"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:srcCompat="@drawable/img_logo" />-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer3"-->
+    <!--                        android:layout_width="64dp"-->
+    <!--                        android:layout_height="64dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ffy_container_layout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:padding="8dp" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/ffy_footer_layout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            android:paddingTop="8dp">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/ffy_sub_footer_layout"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/ffy_context_header_layout"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    android:visibility="gone">-->
+
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/ffy_context_layout"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="horizontal">-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/ffy_context"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:layout_marginTop="5dp"-->
+    <!--                        android:layout_marginEnd="5dp"-->
+    <!--                        android:text="null"-->
+    <!--                        android:visibility="gone" />-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer4"-->
+    <!--                        android:layout_width="200dp"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:layout_marginTop="5dp"-->
+    <!--                        android:layout_marginEnd="5dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                </LinearLayout>-->
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/ffy_status_layout"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:gravity="left|center_vertical"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    android:paddingTop="5dp"-->
+    <!--                    android:paddingBottom="5dp">-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/ffy_status"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:text="null"-->
+    <!--                        android:visibility="gone" />-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer5"-->
+    <!--                        android:layout_width="50dp"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/ffy_time"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="5dp"-->
+    <!--                        android:text="null"-->
+    <!--                        android:visibility="gone" />-->
+
+    <!--                    <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                        android:id="@+id/ffy_shimmer6"-->
+    <!--                        android:layout_width="50dp"-->
+    <!--                        android:layout_height="20dp"-->
+    <!--                        android:layout_marginStart="5dp"-->
+    <!--                        android:background="#EEEEEE"-->
+    <!--                        android:orientation="horizontal">-->
+
+    <!--                    </com.facebook.shimmer.ShimmerFrameLayout>-->
+    <!--                </LinearLayout>-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/ffy_like_layout"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:orientation="horizontal"-->
+    <!--                    android:paddingBottom="10dp">-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/ffy_linear_like"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:gravity="center_horizontal|center_vertical"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                            android:id="@+id/ffy_shimmer7"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:background="#EEEEEE"-->
+    <!--                            android:orientation="horizontal">-->
+
+    <!--                        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/ffy_like"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:padding="15dp"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:visibility="gone"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:srcCompat="@drawable/img_heart_solid" />-->
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/ffy_like_label"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="null"-->
+    <!--                            android:visibility="gone" />-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/ffy_comment_layout"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="5dp"-->
+    <!--                        android:layout_marginEnd="5dp"-->
+    <!--                        android:gravity="center_horizontal|center_vertical"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                            android:id="@+id/ffy_shimmer8"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:background="#EEEEEE"-->
+    <!--                            android:orientation="horizontal">-->
+
+    <!--                        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/ffy_comment"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:focusable="false"-->
+    <!--                            android:padding="15dp"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:visibility="gone"-->
+    <!--                            app:srcCompat="@drawable/img_comment" />-->
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/ffy_comment_label"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="null"-->
+    <!--                            android:visibility="gone" />-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/ffy_shared_layout"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:gravity="center_horizontal|center_vertical"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                            android:id="@+id/ffy_shimmer9"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:background="#EEEEEE"-->
+    <!--                            android:orientation="horizontal">-->
+
+    <!--                        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/ffy_share"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:padding="15dp"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:visibility="gone"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:srcCompat="@drawable/img_share" />-->
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/ffy_share_label"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="null"-->
+    <!--                            android:visibility="gone" />-->
+    <!--                    </LinearLayout>-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/ffy_helper_layout"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_weight="1"-->
+    <!--                        android:orientation="horizontal" />-->
+
+    <!--                    <LinearLayout-->
+    <!--                        android:id="@+id/ffy_more_layout"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:orientation="vertical">-->
+
+    <!--                        <com.facebook.shimmer.ShimmerFrameLayout-->
+    <!--                            android:id="@+id/ffy_shimmer10"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:layout_marginEnd="16dp"-->
+    <!--                            android:background="#EEEEEE"-->
+    <!--                            android:orientation="horizontal">-->
+
+    <!--                        </com.facebook.shimmer.ShimmerFrameLayout>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/ffy_more"-->
+    <!--                            android:layout_width="50dp"-->
+    <!--                            android:layout_height="50dp"-->
+    <!--                            android:padding="15dp"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:visibility="gone"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:srcCompat="@drawable/img_more" />-->
+
+    <!--                    </LinearLayout>-->
+    <!--                </LinearLayout>-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

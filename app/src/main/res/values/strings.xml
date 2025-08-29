@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Spotd</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="username">Username</string>
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="birthday">Birthday</string>
+    <string name="profile_picture">Profile_picture</string>
+    <string name="ent_email">Enter your email</string>
+    <string name="ent_new_email">Enter new your email</string>
+    <string name="ent_password">Enter your password</string>
+    <string name="ent_confirm_password">Confirm your password</string>
+    <string name="pre_nup">By creating an account, you agree to our Terms , Data Policy and Cookies Policy.</string>
+    <string name="already">Already have an account? Sign In</string>
+    <string name="ent_new_password">Create your new password</string>
+    <string name="ent_confirm_new_password">Confirm your new password</string>
+    <string name="ent_first_name">Enter your first name</string>
+    <string name="ent_middle_name">Enter your middle name</string>
+    <string name="ent_middle_name_optional">Enter your middle name (optional)</string>
+    <string name="ent_last_name">Enter your last name</string>
+    <string name="ent_username">Enter your username</string>
+    <string name="ent_new_username">Create your new username</string>
+    <string name="upload_profile_picture">Upload Profile Picture</string>
+    <string name="change_profile_picture">Change Profile Picture</string>
+    <string name="upload">Upload</string>
+    <string name="bio">Bio</string>
+    <string name="ent_bio">Create you Bio</string>
+    <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="skip">Skip</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="advance">Advance</string>
+    <string name="edit_profile">Edit Account</string>
+    <string name="following">Following</string>
+    <string name="follow">Follow</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_personal_information">Create Personal Information</string>
+    <string name="create_username">Create New Username</string>
+    <string name="allow">Allow Spotd access to your internal \nand external photos.</string>
+    <string name="account_deletion_description">Account deletion may have different consequences depending on the service and the user’s preferences. Some possible outcomes are:
+\n- The user can no longer access their account or any of its features, such as messages, photos, videos, etc.
+\n- The user can no longer recover their account or restore their data in the future.
+\n- The user’s username, email address, and other identifiers may become available for other users to register or claim.
+\n- The user’s data may be completely erased from the service provider’s servers or may be retained for a certain period of time for legal or technical purposes.
+</string>
+
+
+</resources>

@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/srfpl_mai_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/srfpl_linear_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/srfpl_progress"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/srfpl_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/srfpl_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/img_back" />
+
+                    <LinearLayout
+                        android:id="@+id/srfl_censored_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Censored"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/srfpl_transy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|right"
+                        android:orientation="horizontal">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer8"
+                            android:layout_width="150dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <TextView
+                            android:id="@+id/srfpl_username"
+                            style="@style/posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingEnd="10dp"
+                            android:paddingBottom="2dp"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="TextView"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="right|top"
+                        android:orientation="horizontal">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer7"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <TextView
+                            android:id="@+id/srfpl_fullname"
+                            style="@style/posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:paddingTop="2dp"
+                            android:paddingEnd="10dp"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="TextView"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="horizontal">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ffy_profile"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:shapeAppearanceOverlay="@style/roundedImageView"
+                            app:srcCompat="@drawable/img_eye_open" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/srfpl_verify"
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:padding="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:shapeAppearanceOverlay="@style/roundedImageView"
+                            app:srcCompat="@drawable/img_eye_open" />
+
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer9"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear9"
+                style="posts_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:id="@+id/linear10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gredient_top_bottom"
+                android:orientation="vertical"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:id="@+id/linear11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linear_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:shadowColor="#706F6E"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="TextView"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_context"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer0"
+                            android:layout_width="200dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="16dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <TextView
+                            android:id="@+id/srfpl_label_context"
+                            style="@style/posts_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="8dp"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="null"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/sup_option"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <HorizontalScrollView
+                                android:id="@+id/sup_hvs1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:id="@+id/sup_hastag_label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textview5"
+                                        style="@style/posts_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:focusable="false"
+                                        android:padding="8dp"
+                                        android:shadowColor="#706F6E"
+                                        android:shadowDx="1"
+                                        android:shadowDy="1"
+                                        android:shadowRadius="1"
+                                        android:text="TextView"
+                                        android:textColor="#fff"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </HorizontalScrollView>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_check_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer1"
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="16dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <TextView
+                            android:id="@+id/srfpl_label_time"
+                            style="@style/posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:paddingStart="16dp"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="null"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/srfpl_type"
+                            style="@style/posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:focusable="false"
+                            android:paddingLeft="8dp"
+                            android:shadowColor="#706F6E"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="1"
+                            android:text="null"
+                            android:textColor="#D1D1D1"
+                            android:textSize="14sp"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/srfpl_label_views"
+                            style="@style/posts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center_vertical"
+                            android:paddingRight="8dp"
+                            android:text="null"
+                            android:textColor="#fff"
+                            android:visibility="gone" />
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/srfpl_shimmer2"
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="#EEEEEE"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_like"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/srfpl_linear_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/srfpl_shimmer3"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#EEEEEE"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <ImageView
+                                android:id="@+id/srfpl_likes"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:backgroundTint="@color/ImageBackgroundColor"
+                                android:elevation="4dp"
+                                android:focusable="false"
+                                android:padding="15dp"
+                                android:scaleType="centerCrop"
+                                android:translationZ="4dp"
+                                app:srcCompat="@drawable/img_heart_solid" />
+
+                            <TextView
+                                android:id="@+id/srfpl_label_like"
+                                style="@style/posts_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:paddingBottom="8dp"
+                                android:shadowColor="#706F6E"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="nulll"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/srfpl_linear_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/srfpl_shimmer4"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#EEEEEE"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <ImageView
+                                android:id="@+id/srfpl_comment"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:backgroundTint="@color/ImageBackgroundColor"
+                                android:focusable="false"
+                                android:padding="15dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/img_comment" />
+
+                            <TextView
+                                android:id="@+id/srfpl_label_comment"
+                                style="@style/posts_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:paddingBottom="8dp"
+                                android:shadowColor="#706F6E"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="null"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/srfpl_linear_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:orientation="vertical">
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/srfpl_shimmer5"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#EEEEEE"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <ImageView
+                                android:id="@+id/srfpl_share"
+                                android:backgroundTint="@color/ImageBackgroundColor"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:focusable="false"
+                                android:padding="15dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/img_share" />
+
+                            <TextView
+                                android:id="@+id/srfpl_label_share"
+                                style="@style/posts_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:paddingBottom="8dp"
+                                android:shadowColor="#706F6E"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="null"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:padding="8dp" />
+
+                        <LinearLayout
+                            android:id="@+id/srfpl_linear_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.facebook.shimmer.ShimmerFrameLayout
+                                android:id="@+id/srfpl_shimmer6"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="#EEEEEE"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                            </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <ImageView
+                                android:id="@+id/srfpl_more"
+                                android:backgroundTint="@color/ImageBackgroundColor"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:focusable="false"
+                                android:padding="15dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/img_more" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
